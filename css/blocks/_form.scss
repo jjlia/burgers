@@ -76,7 +76,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: $red;
   opacity: 0;
 }
 
@@ -102,4 +102,5 @@
 
 .form__block-checkbox {
   display: flex;
+  cursor: pointer;
 }
