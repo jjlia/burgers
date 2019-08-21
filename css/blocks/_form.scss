@@ -13,6 +13,7 @@
   
   .form__row {
     display: flex;
+    margin-bottom: 20px;
   }
   
   .form__block {
@@ -48,13 +49,13 @@
 
 .form__block-desc {
     display: flex;
-    color: #000;
+    color: #fff;
     font-size: 14px;
     font-weight: 300;
     margin-right: 10px;
     cursor: pointer;
 }
-.form__radio-foto {
+.form__radio-money {
     opacity: 0;
     position: absolute;
 }
@@ -75,18 +76,30 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #ec1e79;
+  background-color: #fff;
   opacity: 0;
 }
 
-.form__radio-foto:checked + .form__radio-content .form__radio-text {
-    color: #ec1e79;
+.form__radio-money:checked + .form__radio-content .form__radio-text {
+    color: #fff;
   }
   
-  .form__radio-foto:checked + .form__radio-content .form__radio-btn {
-    border: 1px solid #ec1e79;
+  .form__radio-money:checked + .form__radio-content .form__radio-btn {
+    border: 1px solid #fff;
   }
   
-  .form__radio-foto:checked + .form__radio-content .form__radio-btn:after {
+  .form__radio-money:checked + .form__radio-content .form__radio-btn:after {
     opacity: 1;
   }
+
+.form__input-ring {
+    padding: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 4px 15px 0 0;
+}
+
+.form__block-checkbox {
+  display: flex;
+}

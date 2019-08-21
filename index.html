@@ -45,7 +45,7 @@
           </header>
           <div class="hero__content">
               <div class="hero__content-picture">
-                  <img src="img/pic/steam+(2)1.png" alt="">
+                  <img src="img/pic/steam+(2)1.png" width="417px" height="424px" alt="бургер">
               </div>
               <div class="hero__desc">
                   <div class="title">Мы делаем</div>
@@ -105,7 +105,7 @@
 
        <section class="section reviews">
         <ul class="reviews__list">
-          <li class="reviews__item" style="background-image: url('/../img/photo/photo1.png')">
+          <li class="reviews__item" style="background-image: url('/img/photo/photo1.png')">
             <div class="reviews__hover">
               <div class="reviews__title">Константин Спилберг</div>
               <div class="reviews__text">
@@ -116,7 +116,7 @@
               <button type="button" class="btn">Подробнее</button>
             </div>
           </li>
-          <li class="reviews__item" style="background-image: url('./img/photo/photo2.png')">
+          <li class="reviews__item" style="background-image: url('img/photo/photo2.png')">
             <div class="reviews__hover">
               <div class="reviews__title">Константин Спилберг</div>
               <div class="reviews__text">
@@ -127,7 +127,7 @@
               <button type="button" class="btn">Подробнее</button>
             </div>
           </li>
-          <li class="reviews__item" style="background-image: url('./img/photo/photo3.png')">
+          <li class="reviews__item" style="background-image: url('img/photo/photo3.png')">
             <div class="reviews__hover">
               <div class="reviews__title">Константин Спилберг</div>
               <div class="reviews__text">
@@ -138,7 +138,7 @@
               <button type="button" class="btn">Подробнее</button>
             </div>
           </li>
-          <li class="reviews__item" style="background-image: url('./img/photo/photo4.png')">
+          <li class="reviews__item" style="background-image: url('img/photo/photo4.png')">
             <div class="reviews__hover">
               <div class="reviews__title">Константин Спилберг</div>
               <div class="reviews__text">
@@ -149,7 +149,7 @@
               <button type="button" class="btn">Подробнее</button>
             </div>
           </li>
-          <li class="reviews__item" style="background-image: url('./img/photo/photo5.png')">
+          <li class="reviews__item" style="background-image: url('img/photo/photo5.png')">
             <div class="reviews__hover">
               <div class="reviews__title">Константин Спилберг</div>
               <div class="reviews__text">
@@ -160,7 +160,7 @@
               <button type="button" class="btn">Подробнее</button>
             </div>
           </li>
-          <li class="reviews__item" style="background-image: url('./img/photo/photo6.png')">
+          <li class="reviews__item" style="background-image: url('img/photo/photo6.png')">
             <div class="reviews__hover">
               <div class="reviews__title">Константин Спилберг</div>
               <div class="reviews__text">
@@ -171,7 +171,7 @@
               <button type="button" class="btn">Подробнее</button>
             </div>
           </li>
-          <li class="reviews__item" style="background-image: url('./img/photo/photo7.png')">
+          <li class="reviews__item" style="background-image: url('img/photo/photo7.png')">
             <div class="reviews__hover">
               <div class="reviews__title">Константин Спилберг</div>
               <div class="reviews__text">
@@ -182,7 +182,7 @@
               <button type="button" class="btn">Подробнее</button>
             </div>
           </li>
-          <li class="reviews__item" style="background-image: url('./img/photo/photo8.png')">
+          <li class="reviews__item" style="background-image: url('img/photo/photo8.png')">
             <div class="reviews__hover">
               <div class="reviews__title">Константин Спилберг</div>
               <div class="reviews__text">
@@ -192,7 +192,7 @@
               </div>
               <button type="button" class="btn">Подробнее</button>
             </div>
-          </li>
+          </li> -->
         </ul>
         </section>
 
@@ -232,23 +232,26 @@
                             <input type="text" class="form__input">
                       </label>
                       <label class="form__block">
-                        <div class="form__block-title">"Этаж"</div>
+                        <div class="form__block-title">Этаж</div>
                         <input type="text" class="form__input">
                       </label>
                     </div>
         
                   </div>
                   <div class="form__column">
-                    <label class="form__block">
-                      <div class="form__block-title">Комментарий</div>
-                      <textarea class="form__input form__input--textarea"></textarea>
-                    </label>
-                    <div class="form__block-radio">
+                    <div class="form__row">
+                      <label class="form__block">
+                        <div class="form__block-title">Комментарий</div>
+                        <textarea class="form__input form__input--textarea"></textarea>
+                      </label>
+                    </div>
+                  
+                    <div class="form__row">
                         <label class="form__block-desc">
                             <input type="radio" name="radio" class="form__radio-money">
                             <div class="form__radio-content">
                                 <div class="form__radio-btn"></div>
-                                <div class="form__radio-text">Потребуетс сдача</div>
+                                <div class="form__radio-text">Потребуется сдача</div>
                             </div>
                         </label>
                         <label class="form__block-desc">
@@ -258,15 +261,17 @@
                                 <div class="form__radio-text">Оплата по карте</div>
                             </div>
                         </label>
-                        <label for="input">
-                            <input type="checkbox" name="text" class="form__input">
+                    </div>
+                    <div class="form__row">
+                        <label for="input" class="form__block-checkbox">
+                            <input type="checkbox" name="text" class="form__input form__input-ring">
                             <div class="form__input-text">Не перезванивать</div>
                         </label>
                     </div>
 
                     <button type="submit" class="btn">Заказать</button>
                     <button type="reset">Очистить</button>
-                  </div>
+                  </div>  
                 </form>
               </div>
             </div>
