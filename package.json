@@ -1,0 +1,25 @@
+{
+  "name": "burgers",
+  "version": "1.0.0",
+  "description": "gulpBurgers",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjlia/burgers.git"
+  },
+  "author": "jjlia kavkaykina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjlia/burgers/issues"
+  },
+  "homepage": "https://github.com/jjlia/burgers#readme"
+}
