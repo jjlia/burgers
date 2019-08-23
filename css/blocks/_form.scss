@@ -1,5 +1,9 @@
 .form__elem {
     display: flex;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    @include ubuntu;
   }
   
   .form__column {
@@ -49,9 +53,6 @@
 
 .form__block-desc {
     display: flex;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 300;
     margin-right: 10px;
     cursor: pointer;
 }
@@ -70,15 +71,18 @@
   border: 1px solid #cbcbcb;
   margin-right: 5px;
   outline: none;
+  background: #fff;
+
+    &:after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $red;
+      opacity: 0;
+    }
 }
-.form__radio-btn:after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: $red;
-  opacity: 0;
-}
+
 
 .form__radio-money:checked + .form__radio-content .form__radio-text {
     color: #fff;
