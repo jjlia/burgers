@@ -1,6 +1,27 @@
-.body {
-    background: red;
-    width: 100%;
-    height: 100%;
+$orange: #e45028;
+$yellow: #f9b43b;
+$black: #2f3234;
+$red: #e35028;
 
-}
+$z-fixed-menu: 100;
+
+//normalize
+@import "_misc/normalize.scss";
+
+// setups
+@import "_misc/mixins";
+@import "_misc/fonts";
+@import "_misc/layout";
+
+@import "blocks/_section.scss";
+@import "blocks/hero.scss";
+@import "blocks/header.scss";
+@import "blocks/menu.scss";
+@import "blocks/_btn.scss";
+@import "blocks/title.scss";
+@import "blocks/scroll-down-btn.scss";
+@import "blocks/best.scss";
+@import "blocks/reviews.scss";
+@import "blocks/_order.scss";
+@import "blocks/form";
+@import "blocks/fixed-menu.scss";
