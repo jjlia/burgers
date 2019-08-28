@@ -13,15 +13,15 @@
   }
 
   .hero__content-picture {
-    margin-right: 20px;
+    margin-right: rem(20px);
   }  
   
   .hero__desc {
-    padding-top: 85px;
+    padding-top: rem(85px);
   }
   
   .hero__subtitle {
-    font-size: 56px;
+    font-size: rem(56px);
     color: #fff;
     line-height: 1;
     @include lifehack;

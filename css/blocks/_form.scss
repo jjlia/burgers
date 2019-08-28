@@ -1,14 +1,14 @@
 .form__elem {
     display: flex;
     color: #fff;
-    font-size: 14px;
+    font-size: rem(14px);
     font-weight: 300;
     @include ubuntu;
   }
   
   .form__column {
     flex: 1;
-    margin-right: 20px;
+    margin-right: rem(20px);
   
     &:last-child {
       margin-right: 0;
@@ -17,12 +17,12 @@
   
   .form__row {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
   }
   
   .form__block {
     flex: 1;
-    margin-right: 20px;
+    margin-right: rem(20px);
     display: block;
   
     &:last-child {
@@ -32,14 +32,14 @@
   
   .form__input {
     background: #fff;
-    border-radius: 3px;
+    border-radius: rem(3px);
     border: none;
-    padding: 8px 21px;
+    padding: rem(8px) rem(21px);
     width: 100%;
   
     &--textarea {
       resize: none;
-      height: 110px;
+      height: rem(110px);
     }
   }
 
@@ -53,7 +53,7 @@
 
 .form__block-desc {
     display: flex;
-    margin-right: 10px;
+    margin-right: rem(10px);
     cursor: pointer;
 }
 .form__radio-money {
@@ -65,18 +65,18 @@
     display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: rem(20px);
+  height: rem(20px);
   border-radius: 50%;
-  border: 1px solid #cbcbcb;
-  margin-right: 5px;
+  border: rem(1px) solid #cbcbcb;
+  margin-right: rem(5px);
   outline: none;
   background: #fff;
 
     &:after {
       content: "";
-      width: 8px;
-      height: 8px;
+      width: rem(8px);
+      height: rem(8px);
       border-radius: 50%;
       background-color: $red;
       opacity: 0;
@@ -89,7 +89,7 @@
   }
   
   .form__radio-money:checked + .form__radio-content .form__radio-btn {
-    border: 1px solid #fff;
+    border: rem(1px) solid #fff;
   }
   
   .form__radio-money:checked + .form__radio-content .form__radio-btn:after {
@@ -99,9 +99,9 @@
 .form__input-ring {
     padding: 0;
     display: block;
-    width: 15px;
-    height: 15px;
-    margin: 4px 15px 0 0;
+    width: rem(15px);
+    height: rem(15px);
+    margin: rem(4px) rem(15px) 0 0;
 }
 
 .form__block-checkbox {
