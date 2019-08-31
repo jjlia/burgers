@@ -1,5 +1,5 @@
 .team {
-    background-image: url('/img/photo/SBS_1255-X2.png');
+    background-image: url('../img/photo/SBS_1255-X2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -123,12 +123,13 @@
 
     @include laptop {
         text-align: center;
+        font-size: rem(14px);
     }
 
     @include tablets {
 		flex-direction: column;
-		text-align: center;
-        
+        text-align: center;
+        font-size: rem(14px);    
     }
 }
 
@@ -155,9 +156,6 @@
 
 .team-accordeon__text {
    width: 70%;
-
-
-
     @include laptop {
         width: 100%;
     }
@@ -170,9 +168,10 @@
 
 .team-accordeon__title {
 	@include ubuntu;
-    font-weight: bold;
+    font-weight: 700;
 	margin-bottom: rem(15px);
-	color: #fff;
+    color: #fff;
+    font-size: rem(14px);
 }
 
 .team-accordeon__text-content {
@@ -180,6 +179,14 @@
 	color: #fff;
     font-weight: 300;
     line-height: 24px;
+
+    @include phones {
+    font-size: 14px;
+	color: #fff;
+    font-weight: 300;
+    line-height: 24px;
+    @include ubuntu;
+    }
 }
 
 .team-accordeon__item--active {
