@@ -19,6 +19,12 @@
     position: relative;
     filter: grayscale(100%);
 
+    @include tablets {
+        width: 50%;
+        height: 25%;
+        
+    }
+
     &:hover {
         .reviews__hover {
             opacity: 1;
@@ -38,6 +44,11 @@
     opacity: 0;
     transition: opacity .3s;
 
+    @include tablets {
+        padding: 5%;
+        text-align: center;
+    }
+
     &>h4 {
         color: #fff;
         @include gagalin;
@@ -54,5 +65,9 @@
     font-size: rem(14px);
     font-weight: 300;
     line-height: rem(24px);
-    margin-bottom: rem(17px);
+    // margin-bottom: rem(17px);
+
+    @include phones {
+        display: none;
+    }
 }

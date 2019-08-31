@@ -4,11 +4,20 @@
     font-size: rem(14px);
     font-weight: 300;
     @include ubuntu;
+
+    @include tablets {
+      flex-direction: column;
+      padding: 0 20%;
+    }
   }
   
   .form__column {
     flex: 1;
     margin-right: rem(20px);
+
+    @include tablets {
+      margin-right: 0;
+    }
   
     &:last-child {
       margin-right: 0;

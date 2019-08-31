@@ -5,7 +5,7 @@ $red: #e35028;
 
 $z-fixed-menu: 100;
 
-$phones:480px;
+$phones: 480px;
 $tablets: 768px;
 $laptop: 992px;
 $desktop: 1200px;
@@ -13,23 +13,28 @@ $desktop: 1200px;
 //normalize
 @import "_misc/normalize.scss";
 
+@import "_misc/media";
+
 // setups
 @import "_misc/mixins";
 @import "_misc/fonts";
 @import "_misc/layout";
-@import "_misc/media";
+
 
 @import "blocks/_section.scss";
-@import "blocks/hero.scss";
+@import "blocks/_hero";
 @import "blocks/header.scss";
+@import "blocks/hamburger-menu-link.scss";
 @import "blocks/menu.scss";
 @import "blocks/_btn.scss";
 @import "blocks/title.scss";
 @import "blocks/scroll-down-btn.scss";
 @import "blocks/best.scss";
 @import "blocks/_team.scss";
-@import "blocks/_menu-acco.scss";
-@import "blocks/reviews.scss";
+@import "blocks/_menu-acco";
+@import "blocks/reviews";
 @import "blocks/_order.scss";
 @import "blocks/form";
-@import "blocks/fixed-menu.scss";
+@import "blocks/footer";
+@import "blocks/socials";
+@import "blocks/_fixed-menu";
