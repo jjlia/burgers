@@ -10,20 +10,61 @@
     display: flex;
     align-items: center;
     flex: .8;
+
+    @include tablets {
+      flex-direction: column;
+      padding: 0 13%;
+    }
+
+    @include phones {
+      flex-direction: column;
+      padding: 0;
+    }
   }
 
   .hero__content-picture {
-    margin-right: 20px;
+    margin-right: rem(20px);
+
+    @include tablets {
+    width: 100%;
+    
+    }
   }  
   
-  .hero__desc {
-    padding-top: 85px;
+  .hero__img {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    min-height: 100%;
+
+    @include tablets {
+      max-width: 80%;
+    }
   }
-  
+  .hero__desc {
+    padding-top: rem(85px);
+
+    @include tablets {
+      width: 100%;
+      padding-top: 0;
+      text-align: center;
+    }
+  }
+  .section__title-hero {
+    @include tablets {
+      font-size: rem(63px);
+    }
+  }
   .hero__subtitle {
-    font-size: 56px;
+    font-size: rem(56px);
     color: #fff;
     line-height: 1;
     @include lifehack;
     text-transform: lowercase;
+
+    @include phones {
+      font-size: rem(42px);
+    }
   }

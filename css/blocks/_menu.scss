@@ -1,5 +1,9 @@
 .menu {
-    margin-right: 15px;
+    margin-right: rem(15px);
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .menu__list {
@@ -10,16 +14,16 @@
 .menu__item {
     display: flex;
     align-items: center;
-    margin-right: 15px;
+    margin-right: rem(15px);
 
     &:after {
         content: "";
-        width: 4px;
-        height: 4px;
+        width: rem(4px);
+        height: rem(4px);
         background: #fff;
         border-radius: 50%;
         display: block;
-        margin-left: 15px;
+        margin-left: rem(15px);
     }
 
     &:last-child {
@@ -33,6 +37,6 @@
 .menu__link {
     text-decoration: none;
     color: #fff;
-    font-size: 13px;
+    font-size: rem(13px);
     text-transform: uppercase;
 }

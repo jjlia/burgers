@@ -1,0 +1,334 @@
+.team {
+    background-image: url('../img/photo/SBS_1255-X2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    @include tablets {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(47, 50, 52, .93);
+        }
+    }
+}
+
+
+.section__title {
+    margin-bottom: rem(45px);
+
+    @include phones {
+        margin-bottom: rem(20px);
+    }
+}
+
+
+.team__content {
+    position: absolute;
+    background-color: rgba(47, 50, 52, .93);
+    left: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+	padding: 5% 2% 0 7%;
+	text-align: left;
+    
+
+
+
+    @include tablets {
+        left: 0;
+        padding: 0;
+        position: relative;
+        text-align: center;
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+    }
+}
+.team-accordeon__list {
+	@include tablets {
+		text-align: center;
+	}
+}
+.team-accordeon__item {
+    color: #fff;
+    margin-bottom: rem(30px);
+    font-size: rem(14px);
+    @include ubuntu;
+
+    @include tablets {
+        margin-bottom: rem(20px);
+    }
+
+    @include phones {
+        margin-bottom: rem(10px);
+    }
+}
+
+.team-accordeon__trigger {
+    color: #fff;
+    text-decoration: none;
+    font-size: rem(14px);
+    @include gagalin;
+    font-weight: 400;
+    display: inline-block;
+	margin-bottom: rem(10px);
+	position: relative;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 0;
+        width: 0;
+        border: 5px solid transparent;
+        border-top-color: $yellow;
+        border-bottom-width: 0px;
+        margin-right: rem(10px);
+    }
+
+    @include tablets {
+		font-size: rem(24px);
+		display: inline-flex;
+    }
+}
+
+.team-accordeon__content {
+    display: flex;
+    height: 0;
+    overflow: hidden;
+    transition: .4s;
+    padding: 0 rem(15px);
+    margin: 0 auto;
+
+    @include laptop {
+        text-align: center;
+        font-size: rem(14px);
+    }
+
+    @include tablets {
+		flex-direction: column;
+        text-align: center;
+        font-size: rem(14px);    
+    }
+}
+
+.team-accordeon__pic {
+	// 
+	text-align: center;
+	// width: 30%;
+
+	@include tablets {
+		margin-bottom: rem(15px);
+	}
+}
+
+.team-accordeon__img {
+    display: inline-block;
+	// 
+	width: rem(100px);
+	height: rem(100px);
+	border-radius: 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.team-accordeon__text {
+   width: 70%;
+    @include laptop {
+        width: 100%;
+    }
+
+    @include tablets {
+		text-align: center;
+		width: 100%;
+    }
+}
+
+.team-accordeon__title {
+	@include ubuntu;
+    font-weight: 700;
+	margin-bottom: rem(15px);
+    color: #fff;
+    font-size: rem(14px);
+}
+
+.team-accordeon__text-content {
+	@include ubuntu(light);
+	color: #fff;
+    font-weight: 300;
+    line-height: 24px;
+
+    @include phones {
+    font-size: 14px;
+	color: #fff;
+    font-weight: 300;
+    line-height: 24px;
+    @include ubuntu;
+    }
+}
+
+.team-accordeon__item--active {
+    .team-accordeon__trigger {
+        color: $yellow;
+        &:before {
+            transform: rotate(-180deg);
+        }
+    }
+    .team-accordeon__content {
+		height: auto;
+		width: 100%;
+	}
+	.team-accordeon__text {
+		display: block;
+	}
+}
+
+// .team-accordeon {
+// 	@include tablets {
+// 		padding-bottom: rem(20px);
+// 	}
+// }
+
+// .team-accordeon__item {
+//   margin-bottom: rem(40px);
+  
+//   @include tablets {
+	  
+//     margin-bottom: rem(30px);
+//   }
+
+// 	&:last-child {
+// 		margin-bottom: 0;
+// 	}
+
+// 	&.active {
+// 		.team-accordeon__trigger {
+// 			color: $yellow;
+
+// 			&:before {
+// 				transform: rotate(-180deg);
+// 			}
+// 		}
+// 	}
+// }
+
+// .team-accordeon__trigger {
+// 	color: #fff;
+// 	font-size: rem(14px);
+// 	@include gagalin;
+// 	text-decoration: none;
+// 	position: relative;
+// 	display: block;
+// 	margin-bottom: rem(20px);
+
+// 	&:before, &:after {
+// 		content: "";
+// 		display: block;
+// 		position: absolute;
+// 		left: rem(-18px);
+// 		top: rem(8px);
+// 		width: 0;
+//         height: 0;
+// 	}
+
+// 	&:before {
+// 		border-top: rem(7px) solid $yellow;
+// 		border-left: rem(5px) solid transparent;
+// 		border-right: rem(5px) solid transparent;
+// 		border-bottom: rem(0px) solid transparent;
+// 		transform: rotate(0deg);
+// 		transition: .3s;
+// 	}
+
+// 	&:after {
+// 		display: none;
+// 		border-bottom: rem(7px) solid $yellow;
+// 		border-left: rem(5px) solid transparent;
+// 		border-right: rem(5px) solid transparent;
+// 		border-top: rem(0px) solid transparent;
+// 	}
+
+// 	@include tablets {
+// 		display: inline-block;
+// 		font-size: rem(25px);
+
+// 		&:before {
+// 			margin-top: rem(10px);
+// 		}
+// 	}
+// }
+
+// .team-accordeon__content {
+	
+// 	padding-top: rem(14px);
+// 	display: none;
+
+// 	@include tablets {
+// 		padding: 0 25%;
+// 	}
+// }
+
+// .team-accordeon__pic {
+// 	text-align: center;
+// 	width: 30%;
+
+// 	@include tablets {
+// 		margin-bottom: rem(15px);
+// 	}
+// }
+
+// .team-accordeon__img {
+	
+// 	width: rem(100px);
+// 	height: rem(100px);
+	
+// 	border-radius: 50%;
+// }
+
+// .team-accordeon__text {
+// 	width: 70%;
+// }
+
+// .team-accordeon__pic, .team-accordeon__text {
+// 	float: left;
+
+// 	@include tablets {
+// 		float: none;
+// 		width: 100%;
+// 	}
+// }
+
+// .team-accordeon__title {
+// 	@include ubuntu(bold);
+// 	font-size: rem(14px);
+// 	color: #fff;
+// 	margin-bottom: rem(14px);
+// }
+
+// .team-accordeon__text-content {
+// 	@include ubuntu(light);
+// 	color: #fff;
+// 	font-size: rem(14px);
+// }

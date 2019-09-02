@@ -1,9 +1,13 @@
 .btn {
-    padding: 12px 15px;
-    border-radius: 5px;
+    padding: rem(12px) rem(15px);
+    border-radius: rem(5px);
     background: $red;
     text-transform: uppercase;
     color: #fff;
-    font-size: 13px;
+    font-size: rem(13px);
+    margin-right: rem(30px);
   }
   
+.btn__reviews {
+  background: #2f3234;
+}
