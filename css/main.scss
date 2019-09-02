@@ -13,12 +13,12 @@ $desktop: 1200px;
 //normalize
 @import "_misc/normalize.scss";
 
-@import "_misc/media";
+@import "_misc/media.scss";
 
 // setups
-@import "_misc/mixins";
-@import "_misc/fonts";
-@import "_misc/layout";
+@import "_misc/mixins.scss";
+@import "_misc/_fonts.scss";
+@import "_misc/layout.scss";
 
 
 @import "blocks/_section.scss";
@@ -31,10 +31,11 @@ $desktop: 1200px;
 @import "blocks/scroll-down-btn.scss";
 @import "blocks/best.scss";
 @import "blocks/_team.scss";
-@import "blocks/_menu-acco.scss";
+@import "blocks/menu-acco.scss";
 @import "blocks/reviews.scss";
 @import "blocks/_order.scss";
 @import "blocks/form";
+@import "blocks/_map";
 @import "blocks/footer.scss";
 @import "blocks/socials.scss";
 @import "blocks/_fixed-menu.scss";

@@ -28,11 +28,31 @@
     height: 100%;
     display: flex;
 
-    &.active {
+    &--active {
         .menu-acco__trigger-text {
-            color: $yellow;
+            color: $yellow; 
+            }
         }
-    }
+}
+
+.menu-acco__item-meats {
+    background-image: url('../img/pic/meats1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+
+.menu-acco__item-vegans {
+    background-image: url('../img/pic/vegans1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.menu-acco__item-diets {
+    background-image: url('../img/pic/diets1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .menu-acco__trigger {
@@ -40,7 +60,7 @@
     height: 100%;
     text-decoration: none;
     position: relative;
-
+    
 
 }
 
@@ -61,12 +81,11 @@
 .menu-acco__content {
     background: #2f3234;
     color: #fff;
-    opacity: .7;
+    opacity: .93;
     font-size: rem(14px);
     @include ubuntu;
     font-weight: 300;
     line-height: rem(24px);
-    
     height: 100%;
     width: 0;
     overflow: hidden;
