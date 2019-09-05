@@ -32,13 +32,14 @@
         .menu-acco__trigger-text {
             color: $yellow; 
             }
+        
         }
 }
 
 .menu-acco__item-meats {
     background-image: url('../img/pic/meats1.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     
 }
 
@@ -94,4 +95,16 @@
 .menu-acco__text {
     display: none;
     padding: 60px 30px;
+}
+
+.menu-acco__item--active {
+	.menu-acco__trigger {
+		color: $yellow;
+	}
+	// .menu-acco__item-content {
+	// 	width: rem(450px);
+	// }
+	// .menu-acco__item-description {
+	// 	opacity: 1;
+	// }
 }

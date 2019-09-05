@@ -4,10 +4,28 @@
     height: rem(22px);
     align-items: center;
     display: none;
+    z-index: 10;
     // margin-left: rem(30px);
 
     @include tablets {
         display: flex;
+        
+    }
+}
+
+.hamburger-menu-link.active {
+
+
+    .hamburger-menu-link__bars {
+        background-color: transparent;
+        &:before {
+            transform: rotate(-45deg);
+            top: rem(9px);
+        }
+        &:after {
+            transform: rotate(45deg);
+            top: rem(9px);
+        }
     }
 }
 

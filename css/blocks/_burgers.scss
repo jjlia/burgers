@@ -1,0 +1,251 @@
+.burgers {
+	background: #f9b43b;
+	background: -moz-linear-gradient(top, #f9b43b 0%, #eb8c38 40%, #eb8c38 60%, #eb8c38 60%, #f9b43b 100%);
+	background: -webkit-linear-gradient(top, #f9b43b 0%, #eb8c38 40%, #eb8c38 60%, #eb8c38 60%, #f9b43b 100%);
+	background: linear-gradient(to bottom, #f9b43b 0%, #eb8c38 40%, #eb8c38 60%, #eb8c38 60%, #f9b43b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9b43b', endColorstr='#f9b43b',GradientType=0 );
+	position: relative;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	.section__title {
+		line-height: 64px;
+		margin-bottom: rem(40px);
+		@include phones {
+			margin-bottom: rem(20px);
+			line-height: 50px;
+		}
+	}
+}
+
+.burger {
+	position: relative;
+	display: flex;
+	align-items: center;
+	@include tablets {
+		width: 80%;
+		margin: 0 auto;
+	}
+	@include phones {
+		width: 90%;
+	}
+}
+
+.burger__wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.burger__list {
+	position: relative;
+	display: flex;
+	will-change: right;
+	transition: right 0.3s;
+}
+
+.burger__item {
+	position: relative;
+}
+
+.burger__controls-link {
+	fill: #fff;
+}
+
+.burger__controls-picture {
+	width: rem(27px);
+}
+
+.burger__controls-link--next {
+	@include center-abs(vertical);
+	right: rem(-20px);
+	.burger__controls-picture {
+		transform: rotate(-90deg);
+	}
+	@include tablets {
+		right: rem(-16px);
+	}
+}
+
+.burger__controls-link--prev {
+	@include center-abs(vertical);
+	left: rem(-20px);
+	.burger__controls-picture {
+		transform: rotate(90deg);
+	}
+	@include tablets {
+		left: rem(-16px);
+	}
+}
+
+.burger__item {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: rem(75px);
+	@include tablets {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 0;
+		text-align: center;
+		padding-top: rem(90px);
+	}
+}
+
+.burger__left,
+.burger__right {
+	width: 49%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include tablets {
+		width: 100%;
+	}
+}
+
+.burger__left {
+	align-items: flex-end;
+	@include tablets {
+		width: 75%;
+	}
+	@include phones {
+		width: 100%;
+	}
+	
+}
+
+.burger__img {
+	width: 100%;
+	text-align: center;
+	@include phones {
+		width: 80%;
+	}
+}
+
+.burger__picture {
+	max-width: 97%;
+}
+
+.burger__info {
+	color: white;
+}
+
+.burger__description {
+	font-weight: 300;
+	font-size: rem(14px);
+	margin-bottom: rem(25px);
+	color: #ffffff;
+    @include ubuntu;
+	line-height: 23.97px;
+	@include phones {
+		margin-bottom: rem(15px);
+	}
+	
+}
+
+.burger__price-order {
+	display: flex;
+	align-items: baseline;
+	line-height: 1;
+	@include tablets {
+		justify-content: center;
+	}
+	@include phones {
+		align-items: flex-end;
+	}
+}
+
+.burger__price {
+	color: $orange;
+	@include gagalin;
+	margin-right: rem(30px);
+}
+
+.burger__price-value {
+	display: inline-block;
+	font-size: rem(72px);
+	@include phones {
+		font-size: rem(54px);
+	}
+}
+
+.burger__price-currency {
+	display: inline-block;
+	font-size: rem(30px);
+	@include phones {
+		font-size: rem(24px);
+	}
+	
+}
+
+.burger__caloricity {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	@include gagalin;
+	color: #fff;
+	opacity: .5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include tablets {
+		right: 0;
+		top: rem(10px);
+		left: auto;
+		bottom: auto;
+	}
+}
+
+.burger__caloricity-value {
+	width: rem(60px);
+	height: rem(60px);
+	font-size: rem(20px);
+	line-height: 75px;
+	text-align: center;
+	background-image: url('../icons/kkal.svg');
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: contain;
+	background-position: center;
+}
+
+.burger__caloricity-measure {
+	font-size: rem(14px);
+}
+
+.burger__ingredients {
+	position: absolute;
+	left: 0;
+	top: rem(10px);
+	width: rem(90px);
+	height: rem(90px);
+	background-color: #f08c33;
+	color: #fff;
+	@include gagalin;
+	font-size: rem(14px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: rem(5px);
+	transition: .3s;
+	&.active {
+		background-color: $orange;
+		.dropdown {
+			left: 100%;
+			opacity: .9;
+		}
+	}
+	@include phones {
+		width: rem(70px);
+		height: rem(70px);
+	}
+}
+
+.burger__ingredients-picture {
+	height: 55%;
+	width: 100%;
+	fill: #fff;
+	margin-bottom: rem(5px);
+}
