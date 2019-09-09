@@ -28,12 +28,18 @@
     height: 100%;
     display: flex;
 
-    &--active {
+    &.active {
         .menu-acco__trigger-text {
             color: $yellow; 
-            }
-        
         }
+        .menu-acco__content {
+            width: 540px;
+        }
+        .menu-acco__text {
+            display: block;
+        }
+        
+    }
 }
 
 .menu-acco__item-meats {
@@ -97,15 +103,3 @@
     padding: 60px 30px;
 }
 
-.menu-acco__item--active {
-	.menu-acco__trigger {
-		color: $yellow;
-	}
-	.menu-acco__item-content {
-		width: rem(450px);
-	}
-	.menu-acco__item-description {
-        opacity: 1;
-        display: block;
-	}
-}

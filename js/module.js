@@ -7,7 +7,7 @@ const accoItemLength = accoItem.Length;
 menu.addEventListener('click', function (e) {
     e.preventDefault();
     for (let i = 0; i < accoItemLength; i++) {
-        accoItem[i].classList.remove('menu-acco__item--active');
+        accoItem[i].classList.remove('active');
     }
 });
 
@@ -16,13 +16,13 @@ for (let i = 0; i < accoItemLength; i++) {
         e.stopPropagation();
         e.preventDefault();
 
-        if (accoItem[i].classList.contains('menu-acco__item--active')) {
-            accoItem[i].classList.remove('menu-acco__item--active');
+        if (accoItem[i].classList.contains('active')) {
+            accoItem[i].classList.remove('active');
         } else {
             for (let i = 0; i < accoItemLength; i++) {
-                accoItem[i].classList.remove('menu-acco__item--active');
+                accoItem[i].classList.remove('active');
             }
-            accoItem[i].classList.add('menu-acco__item--active');
+            accoItem[i].classList.add('active');
         }
     });
 }
@@ -105,3 +105,27 @@ reviews.addEventListener('click', function(e) {
         }
     });
 });
+//////////
+const element = document.querySelector('.team-accordeon__list');
+const item = document.querySelectorAll('.team-accordeon__item');
+const title = document.querySelector('.team-accordeon__trigger');
+const content = document.querySelector('.team-accordeon__content');
+
+console.log(item);
+
+element.classList.add("team-accordeon__list");
+element.addEventListener("click", function(e) {
+    e.preventDefault();
+    let lastActive;
+    if (e.target.classList.contains("team-accordeon__trigger")) {
+     if (lastActive) {
+        lastActive.classList.remove("active");
+      }
+
+      lastActive = e.target.parentNode;
+      lastActive.classList.add("active");
+    }
+  });
+
+/////////////////////////////////////////
+   
