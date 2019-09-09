@@ -101,10 +101,11 @@
 	.menu-acco__trigger {
 		color: $yellow;
 	}
-	// .menu-acco__item-content {
-	// 	width: rem(450px);
-	// }
-	// .menu-acco__item-description {
-	// 	opacity: 1;
-	// }
+	.menu-acco__item-content {
+		width: rem(450px);
+	}
+	.menu-acco__item-description {
+        opacity: 1;
+        display: block;
+	}
 }

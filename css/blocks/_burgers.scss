@@ -36,6 +36,7 @@
 	display: flex;
 	align-items: center;
 	overflow: hidden;
+	width: rem(922px);
 }
 
 .burger__list {
@@ -47,6 +48,7 @@
 
 .burger__item {
 	position: relative;
+	width: rem(922px);
 }
 
 .burger__controls-link {
