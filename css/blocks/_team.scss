@@ -46,9 +46,9 @@
     right: 0;
     top: 0;
     bottom: 0;
-	padding: 5% 2% 0 7%;
-	text-align: left;
-    
+    padding: 5% 2% 0 7%;
+    text-align: left;
+
 
 
 
@@ -57,19 +57,21 @@
         padding: 0;
         position: relative;
         text-align: center;
-		background-color: transparent;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
     }
 }
+
 .team-accordeon__list {
-	@include tablets {
-		text-align: center;
-	}
+    @include tablets {
+        text-align: center;
+    }
 }
+
 .team-accordeon__item {
     color: #fff;
     margin-bottom: rem(30px);
@@ -92,8 +94,8 @@
     @include gagalin;
     font-weight: 400;
     display: inline-block;
-	margin-bottom: rem(10px);
-	position: relative;
+    margin-bottom: rem(10px);
+    position: relative;
 
     &:before {
         content: "";
@@ -108,8 +110,8 @@
     }
 
     @include tablets {
-		font-size: rem(24px);
-		display: inline-flex;
+        font-size: rem(24px);
+        display: inline-flex;
     }
 }
 
@@ -127,81 +129,86 @@
     }
 
     @include tablets {
-		flex-direction: column;
+        flex-direction: column;
         text-align: center;
-        font-size: rem(14px);    
+        font-size: rem(14px);
     }
 }
 
 .team-accordeon__pic {
-	// 
-	text-align: center;
-	// width: 30%;
+    // 
+    text-align: center;
+    // width: 30%;
 
-	@include tablets {
-		margin-bottom: rem(15px);
-	}
+    @include tablets {
+        margin-bottom: rem(15px);
+    }
 }
 
 .team-accordeon__img {
     display: inline-block;
-	// 
-	width: rem(100px);
-	height: rem(100px);
-	border-radius: 50%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+    // 
+    width: rem(100px);
+    height: rem(100px);
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .team-accordeon__text {
-   width: 70%;
+    width: 70%;
+
     @include laptop {
         width: 100%;
     }
 
     @include tablets {
-		text-align: center;
-		width: 100%;
+        text-align: center;
+        width: 100%;
     }
 }
 
 .team-accordeon__title {
-	@include ubuntu;
+    @include ubuntu;
     font-weight: 700;
-	margin-bottom: rem(15px);
+    margin-bottom: rem(15px);
     color: #fff;
     font-size: rem(14px);
 }
 
 .team-accordeon__text-content {
-	@include ubuntu(light);
-	color: #fff;
+    @include ubuntu(light);
+    color: #fff;
     font-weight: 300;
     line-height: 24px;
 
     @include phones {
-    font-size: 14px;
-	color: #fff;
-    font-weight: 300;
-    line-height: 24px;
-    @include ubuntu;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 300;
+        line-height: 24px;
+        @include ubuntu;
     }
 }
 
-.team-accordeon__item:active {
-    .team-accordeon__trigger {
-        color: $yellow;
-        &:before {
-            transform: rotate(-180deg);
+.team-accordeon__item {
+    &.active {
+        .team-accordeon__trigger {
+            color: $yellow;
+
+            &:before {
+                transform: rotate(-180deg);
+            }
+        }
+
+        .team-accordeon__content {
+            height: auto;
+            width: 100%;
+        }
+
+        .team-accordeon__text {
+            display: block;
         }
     }
-    .team-accordeon__content {
-		height: auto;
-		width: 100%;
-	}
-	.team-accordeon__text {
-		display: block;
-	}
 }
-

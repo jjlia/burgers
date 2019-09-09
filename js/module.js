@@ -1,7 +1,7 @@
 //////Меню (аккордеон)
 const menu = document.querySelector('.menu-acco');
 const accoItem = document.querySelectorAll('.menu-acco__item');
-const accoItemLength = accoItem.Length;
+const accoItemLength = accoItem.length;
 
 
 menu.addEventListener('click', function (e) {
@@ -31,7 +31,7 @@ for (let i = 0; i < accoItemLength; i++) {
     const right = document.querySelector('.burger__controls-link--next');
     const left = document.querySelector('.burger__controls-link--prev');
     const list = document.querySelector('.burger__list');
-    let items = document.querySelector('.burger__item');
+    let items = document.querySelectorAll('.burger__item');
 
     let container = document.querySelector('.burger');
     let widthWrapper = container.clientWidth;
@@ -63,10 +63,10 @@ for (let i = 0; i < accoItemLength; i++) {
 
             if (currentRight > minRight) {
                 currentRight -= step;
-                items.style.right = currentRight + "px";
+                list.style.right = currentRight + "px";
             } else {
                 currentRight = maxRight;
-                items.style.right = currentRight + "px";
+                list.style.right = currentRight + "px";
             }
         });
 /////////////////////////////////////
@@ -95,7 +95,7 @@ reviews.addEventListener('click', function(e) {
         e.preventDefault();
 
         overlay.style.display = 'none';
-    })
+    });
 
     document.addEventListener('keyup', e => {
         let keyName = e.key;
@@ -111,21 +111,20 @@ const item = document.querySelectorAll('.team-accordeon__item');
 const title = document.querySelector('.team-accordeon__trigger');
 const content = document.querySelector('.team-accordeon__content');
 
-console.log(item);
 
-element.classList.add("team-accordeon__list");
 element.addEventListener("click", function(e) {
     e.preventDefault();
-    let lastActive;
+    let itemActive = document.querySelector('.active');
+    console.log(itemActive);
     if (e.target.classList.contains("team-accordeon__trigger")) {
-     if (lastActive) {
-        lastActive.classList.remove("active");
-      }
-
-      lastActive = e.target.parentNode;
-      lastActive.classList.add("active");
+    if (itemActive) {
+        itemActive.classList.remove('active');
     }
-  });
+    
+    itemActive = e.target.parentNode;
+    itemActive.classList.add("active");
+    }
+});
 
 /////////////////////////////////////////
-   
+        

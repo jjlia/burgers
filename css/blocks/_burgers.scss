@@ -36,7 +36,7 @@
 	display: flex;
 	align-items: center;
 	overflow: hidden;
-	width: rem(922px);
+	// width: rem(900px);
 }
 
 .burger__list {
@@ -48,7 +48,7 @@
 
 .burger__item {
 	position: relative;
-	width: rem(922px);
+	width: rem(940px);
 }
 
 .burger__controls-link {
@@ -232,6 +232,7 @@
 	justify-content: center;
 	border-radius: rem(5px);
 	transition: .3s;
+	cursor: pointer;
 	&.active {
 		background-color: $orange;
 		.dropdown {
