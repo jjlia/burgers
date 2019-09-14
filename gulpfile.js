@@ -88,7 +88,7 @@ task("scripts", () => {
 
 
 task("icons", () => {
-  return src("/icons/*.svg")
+  return src("icons/*.svg")
     .pipe(
       svgo({
         plugins: [
@@ -109,7 +109,7 @@ task("icons", () => {
         }
       })
     )
-    .pipe(dest(`${DIST_PATH}/images/icons`));
+    .pipe(dest("dist/icons"));
 });
 
 task("browser-sync", () => {
