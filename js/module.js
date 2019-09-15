@@ -163,4 +163,201 @@ let hamburger = options => {
 hamburger({
 	button: ".hamburger-menu-link",
 	menu: ".mobile-menu"
-}).init();        
+}).init();  
+///////////form//////
+const myform = document.querySelector("#myform");
+const send = document.querySelector("#send");
+const formRow = document.querySelector(".form__row-block");
+
+send.addEventListener("click", function(event) {
+    event.preventDefault();
+    if (validateForm(myform) ) {
+        let data = new FormData;
+        data.append("name", myform.elements.name.value);
+        data.append("phone", myform.elements.phone.value);
+        data.append("street", myform.elements.street.value);
+        data.append("home", myform.elements.home.value);
+        data.append("sect", myform.elements.sect.value);
+        data.append("appartment", myform.elements.appartment.value);
+        data.append("comment", myform.elements.comment.value);
+        data.append("to", "my@gmail.com");
+
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = "json";
+        xhr.open("POST", "https://webdev-api.loftschool.com/sendmail");
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.send(data);
+        xhr.addEventListener('load', () => {
+            if (xhr.response.status == 1) {
+                const element = document.createElement("div");
+                formRow.appendChild(element);
+                element.classList.add("message__modal");
+
+                const element2 = document.createElement("div");
+                element.appendChild(element2);
+                element2.classList.add("message__send");
+
+                const element3 = document.createElement("div");
+                element2.appendChild(element3);
+                element3.classList.add("message__text");
+                element3.textContent = "Сообщение отправленно";
+
+                const element4 = document.createElement("button");
+                element2.appendChild(element4);
+                element4.classList.add("btn");
+                element4.textContent = "Закрыть";
+
+                element4.addEventListener('click', function () {
+                    formRow.removeChild(element);
+                });
+            }
+            else {
+                const element = document.createElement("div");
+                formRow.appendChild(element);
+                element.classList.add("message__modal");
+
+                const element2 = document.createElement("div");
+                element.appendChild(element2);
+                element2.classList.add("message__send");
+
+                const element3 = document.createElement("div");
+                element2.appendChild(element3);
+                element3.classList.add("message__text");
+                element3.textContent = "Сообщение не отправленно";
+
+                const element4 = document.createElement("button");
+                element2.appendChild(element4);
+                element4.classList.add("btn");
+                element4.textContent = "Закрыть";
+
+                element4.addEventListener('click', function () {
+                    formRow.removeChild(element);
+                });
+            }
+        send.disabled = false;
+        });
+    }
+});
+
+function validateForm(form) {
+    let valid = true;
+    if (!validateField(form.elements.name)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.phone)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.street)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.home)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.sect)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.appartment)) {
+        valid = false;
+    }
+    if (!validateField(form.elements.comment)) {
+        valid = false;
+    }
+    return valid;
+}
+
+function validateField(field) {
+    if (!field.checkValidity()) {
+        field.nextElementSibling.textContent = field.validationMessage;
+        return false;
+    } else {
+        field.nextElementSibling.textContent = "";
+        return true;
+    }
+};
+
+/////////// стили инпутов
+
+const phone = document.querySelector('#formphone');
+
+phone.addEventListener ('keydown', function (e) {
+   let isDigit = false;
+   let isDash = false;
+   let isControl = false;
+   let isBackspace = false;
+
+   if (e.key >= 0 || e.key <= 9) {
+      isDigit = true;
+   }
+   if (e.key == '-') {
+      isDash = true;
+   }
+
+   if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
+      isControl = true;
+   }
+
+   if (e.key == 'Backspace') {
+      isBackspace = true;
+   }
+
+   if (!isDigit && !isDash && !isControl && !isBackspace) {
+      e.preventDefault();
+   }
+})
+
+const formjustNumber = document.querySelector('#formjustNumber');
+
+formjustNumber.addEventListener ('keydown', function (e) {
+   let isDigit = false;
+   let isDash = false;
+   let isControl = false;
+   let isBackspace = false;
+
+   if (e.key >= 0 || e.key <= 9) {
+      isDigit = true;
+   }
+   if (e.key == '-') {
+      isDash = false;
+   }
+
+   if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
+      isControl = true;
+   }
+
+   if (e.key == 'Backspace') {
+      isBackspace = true;
+   }
+
+   if (!isDigit && !isDash && !isControl && !isBackspace) {
+      e.preventDefault();
+   }
+})
+
+const formNumber = document.querySelector('#formNumber');
+
+formNumber.addEventListener ('keydown', function (e) {
+   let isDigit = false;
+   let isDash = false;
+   let isControl = false;
+   let isBackspace = false;
+
+   if (e.key >= 0 || e.key <= 9) {
+      isDigit = true;
+   }
+   if (e.key == '-') {
+      isDash = false;
+   }
+
+   if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
+      isControl = true;
+   }
+
+   if (e.key == 'Backspace') {
+      isBackspace = true;
+   }
+
+   if (!isDigit && !isDash && !isControl && !isBackspace) {
+      e.preventDefault();
+   }
+})
+

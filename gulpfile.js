@@ -88,7 +88,7 @@ task("scripts", () => {
 
 
 task("icons", () => {
-  return src("icons/*.svg")
+  return src("/icons/*.svg")
     .pipe(
       svgo({
         plugins: [

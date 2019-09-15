@@ -6,7 +6,11 @@
     line-height: 1;
     @include tablets {
       font-size: rem(50px);
+      text-align: center;
     }
+    @include phones {
+      margin-bottom: 3%;
+      text-align: center; } 
   
     &--color {
       &--black {
