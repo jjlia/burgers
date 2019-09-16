@@ -9,11 +9,11 @@
 	display: flex;
 	align-items: center;
 	.section__title {
-		line-height: 64px;
+		line-height: rem(64px);
 		margin-bottom: rem(40px);
 		@include phones {
 			margin-bottom: rem(20px);
-			line-height: 50px;
+			line-height: rem(50px);
 		}
 	}
 }
@@ -36,7 +36,6 @@
 	display: flex;
 	align-items: center;
 	overflow: hidden;
-	// width: rem(900px);
 }
 
 .burger__list {
@@ -52,7 +51,7 @@
 }
 
 .burger__controls-link {
-	fill: #fff;
+	fill: $white;
 }
 
 .burger__controls-picture {
@@ -114,7 +113,7 @@
 	@include phones {
 		width: 100%;
 	}
-	
+
 }
 
 .burger__img {
@@ -137,13 +136,10 @@
 	font-weight: 300;
 	font-size: rem(14px);
 	margin-bottom: rem(25px);
-	color: #ffffff;
-    @include ubuntu;
-	line-height: 23.97px;
 	@include phones {
 		margin-bottom: rem(15px);
 	}
-	
+
 }
 
 .burger__price-order {
@@ -178,7 +174,6 @@
 	@include phones {
 		font-size: rem(24px);
 	}
-	
 }
 
 .burger__caloricity {
@@ -186,7 +181,7 @@
 	left: 0;
 	bottom: 0;
 	@include gagalin;
-	color: #fff;
+	color: $white;
 	opacity: .5;
 	display: flex;
 	flex-direction: column;
@@ -223,7 +218,7 @@
 	width: rem(90px);
 	height: rem(90px);
 	background-color: #f08c33;
-	color: #fff;
+	color: $white;
 	@include gagalin;
 	font-size: rem(14px);
 	display: flex;
@@ -232,8 +227,7 @@
 	justify-content: center;
 	border-radius: rem(5px);
 	transition: .3s;
-	cursor: pointer;
-	&.active {
+	&:hover {
 		background-color: $orange;
 		.dropdown {
 			left: 100%;

@@ -169,9 +169,9 @@ const myform = document.querySelector("#myform");
 const send = document.querySelector("#send");
 const formRow = document.querySelector(".form__row-block");
 
-send.addEventListener("click", function(event) {
+send.addEventListener("click", function (event) {
     event.preventDefault();
-    if (validateForm(myform) ) {
+    if (validateForm(myform)) {
         let data = new FormData;
         data.append("name", myform.elements.name.value);
         data.append("phone", myform.elements.phone.value);
@@ -200,7 +200,7 @@ send.addEventListener("click", function(event) {
                 const element3 = document.createElement("div");
                 element2.appendChild(element3);
                 element3.classList.add("message__text");
-                element3.textContent = "Сообщение отправленно";
+                element3.textContent = "Спасибо за заказ.";
 
                 const element4 = document.createElement("button");
                 element2.appendChild(element4);
@@ -223,7 +223,7 @@ send.addEventListener("click", function(event) {
                 const element3 = document.createElement("div");
                 element2.appendChild(element3);
                 element3.classList.add("message__text");
-                element3.textContent = "Сообщение не отправленно";
+                element3.textContent = "Сообщение не отправлено.";
 
                 const element4 = document.createElement("button");
                 element2.appendChild(element4);
@@ -234,7 +234,7 @@ send.addEventListener("click", function(event) {
                     formRow.removeChild(element);
                 });
             }
-        send.disabled = false;
+            send.disabled = false;
         });
     }
 });
@@ -260,7 +260,7 @@ function validateForm(form) {
         valid = false;
     }
     if (!validateField(form.elements.comment)) {
-        valid = false;
+        valid = true;
     }
     return valid;
 }
@@ -273,91 +273,90 @@ function validateField(field) {
         field.nextElementSibling.textContent = "";
         return true;
     }
-};
+}
 
 /////////// стили инпутов
 
 const phone = document.querySelector('#formphone');
 
-phone.addEventListener ('keydown', function (e) {
-   let isDigit = false;
-   let isDash = false;
-   let isControl = false;
-   let isBackspace = false;
+phone.addEventListener('keydown', function (e) {
+    let isDigit = false;
+    let isDash = false;
+    let isControl = false;
+    let isBackspace = false;
 
-   if (e.key >= 0 || e.key <= 9) {
-      isDigit = true;
-   }
-   if (e.key == '-') {
-      isDash = true;
-   }
+    if (e.key >= 0 || e.key <= 9) {
+        isDigit = true;
+    }
+    if (e.key == '-') {
+        isDash = true;
+    }
 
-   if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
-      isControl = true;
-   }
+    if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
+        isControl = true;
+    }
 
-   if (e.key == 'Backspace') {
-      isBackspace = true;
-   }
+    if (e.key == 'Backspace') {
+        isBackspace = true;
+    }
 
-   if (!isDigit && !isDash && !isControl && !isBackspace) {
-      e.preventDefault();
-   }
-})
+    if (!isDigit && !isDash && !isControl && !isBackspace) {
+        e.preventDefault();
+    }
+});
 
 const formjustNumber = document.querySelector('#formjustNumber');
 
-formjustNumber.addEventListener ('keydown', function (e) {
-   let isDigit = false;
-   let isDash = false;
-   let isControl = false;
-   let isBackspace = false;
+formjustNumber.addEventListener('keydown', function (e) {
+    let isDigit = false;
+    let isDash = false;
+    let isControl = false;
+    let isBackspace = false;
 
-   if (e.key >= 0 || e.key <= 9) {
-      isDigit = true;
-   }
-   if (e.key == '-') {
-      isDash = false;
-   }
+    if (e.key >= 0 || e.key <= 9) {
+        isDigit = true;
+    }
+    if (e.key == '-') {
+        isDash = false;
+    }
 
-   if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
-      isControl = true;
-   }
+    if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
+        isControl = true;
+    }
 
-   if (e.key == 'Backspace') {
-      isBackspace = true;
-   }
+    if (e.key == 'Backspace') {
+        isBackspace = true;
+    }
 
-   if (!isDigit && !isDash && !isControl && !isBackspace) {
-      e.preventDefault();
-   }
-})
+    if (!isDigit && !isDash && !isControl && !isBackspace) {
+        e.preventDefault();
+    }
+});
 
 const formNumber = document.querySelector('#formNumber');
 
-formNumber.addEventListener ('keydown', function (e) {
-   let isDigit = false;
-   let isDash = false;
-   let isControl = false;
-   let isBackspace = false;
+formNumber.addEventListener('keydown', function (e) {
+    let isDigit = false;
+    let isDash = false;
+    let isControl = false;
+    let isBackspace = false;
 
-   if (e.key >= 0 || e.key <= 9) {
-      isDigit = true;
-   }
-   if (e.key == '-') {
-      isDash = false;
-   }
+    if (e.key >= 0 || e.key <= 9) {
+        isDigit = true;
+    }
+    if (e.key == '-') {
+        isDash = false;
+    }
 
-   if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
-      isControl = true;
-   }
+    if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
+        isControl = true;
+    }
 
-   if (e.key == 'Backspace') {
-      isBackspace = true;
-   }
+    if (e.key == 'Backspace') {
+        isBackspace = true;
+    }
 
-   if (!isDigit && !isDash && !isControl && !isBackspace) {
-      e.preventDefault();
-   }
-})
-
+    if (!isDigit && !isDash && !isControl && !isBackspace) {
+        e.preventDefault();
+    }
+});

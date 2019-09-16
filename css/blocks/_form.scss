@@ -1,144 +1,4 @@
-// .form__elem {
-//     display: flex;
-//     color: #fff;
-//     font-size: rem(14px);
-//     font-weight: 300;
-//     @include ubuntu;
 
-//     @include tablets {
-//       flex-direction: column;
-//       padding: 0 20%;
-
-//       @include phones {
-//         padding: 0;
-//       }
-//     }
-
-//     @include phones {
-//       padding: 0;
-//     }
-//   }
-  
-//   .form__column {
-//     flex: 1;
-//     margin-right: rem(20px);
-
-//     @include tablets {
-//       margin-right: 0;
-//     }
-  
-//     &:last-child {
-//       margin-right: 0;
-//     }
-//   }
-  
-//   .form__row {
-//     display: flex;
-//     margin-bottom: rem(20px);
-
-//   }
-  
-//   .form__block {
-//     flex: 1;
-//     margin-right: rem(20px);
-//     display: block;
-  
-//     &:last-child {
-//       margin-right: 0;
-//     }
-
-//     &--hidden-on-mobile {
-//       display: none;
-//     }
-//   }
-  
-//   .form__input {
-//     background: #fff;
-//     border-radius: rem(3px);
-//     border: none;
-//     padding: rem(8px) rem(21px);
-//     width: 100%;
-  
-//     &--textarea {
-//       resize: none;
-//       height: rem(110px);
-//     }
-//   }
-
-//   .form__block-radio {
-//     display: flex;
-// }
-// .form__radio-content {
-//     display: flex;
-//     align-items: center;
-// }
-
-// .form__block-desc {
-//     display: flex;
-//     margin-right: rem(10px);
-//     cursor: pointer;
-// }
-
-// .form__row-btn {
-//   @include phones {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//   }
-// }
-
-// .form__radio-money {
-//     opacity: 0;
-//     position: absolute;
-// }
-
-// .form__radio-btn {
-//     display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: rem(20px);
-//   height: rem(20px);
-//   border-radius: 50%;
-//   border: rem(1px) solid #cbcbcb;
-//   margin-right: rem(5px);
-//   outline: none;
-//   background: #fff;
-
-//     &:after {
-//       content: "";
-//       width: rem(8px);
-//       height: rem(8px);
-//       border-radius: 50%;
-//       background-color: $red;
-//       opacity: 0;
-//     }
-// }
-
-
-// .form__radio-money:checked + .form__radio-content .form__radio-text {
-//     color: #fff;
-//   }
-  
-//   .form__radio-money:checked + .form__radio-content .form__radio-btn {
-//     border: rem(1px) solid #fff;
-//   }
-  
-//   .form__radio-money:checked + .form__radio-content .form__radio-btn:after {
-//     opacity: 1;
-//   }
-
-// .form__input-ring {
-//     padding: 0;
-//     display: block;
-//     width: rem(15px);
-//     height: rem(15px);
-//     margin: rem(4px) rem(15px) 0 0;
-// }
-
-// .form__block-checkbox {
-//   display: flex;
-//   cursor: pointer;
-// }
 .form__column {
   margin-right: 2.5rem; }
   .form__column:last-child {
@@ -289,19 +149,6 @@ textarea {
     display: flex;
     justify-content: center; } }
 
-// .btn {
-//   width: 6.06rem;
-//   height: 2.19rem;
-//   background-color: #e45028;
-//   border-radius: .31rem;
-//   color: #ffffff;
-//   @include ubuntu;
-//   font-size: .81rem;
-//   font-weight: 500;
-//   line-height: 1.88rem;
-//   text-transform: uppercase;
-//   margin-right: .63rem;
-//   cursor: pointer; }
 
 .message__modal {
   width: 17rem;
@@ -327,7 +174,9 @@ textarea {
     font-weight: 300;
     line-height: 1.5rem;
     @include ubuntu;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+
+  }
 
 .message__send {
   display: flex;
@@ -341,7 +190,9 @@ textarea {
   font-size: .88rem;
   font-weight: 300;
   line-height: 1.5rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+
+}
 
 .res {
   color: #ffffff;

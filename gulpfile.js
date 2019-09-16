@@ -12,7 +12,9 @@ const cleanCSS = require("gulp-clean-css");
 const sourcemaps = require("gulp-sourcemaps");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
-const svgo = require("gulp-svgo");
+const svgmin = require("gulp-svgmin");
+const cheerio = require("gulp-cheerio");
+const replace = require("gulp-replace");
 const svgSprite = require("gulp-svg-sprite");
 const gulpif = require("gulp-if");
 
@@ -29,7 +31,7 @@ task("clean", () => {
 
 task("copy:html", () => {
   return src("*.html")
-    .pipe(dest(DIST_PATH))
+    .pipe(dest("dist"))
     .pipe(reload({ stream: true }));
 });
 
@@ -64,7 +66,7 @@ task("styles", () => {
     .pipe(gulpif(env === "prod", gcmq()))
     .pipe(gulpif(env === "prod", cleanCSS()))
     .pipe(gulpif(env === "dev", sourcemaps.write()))
-    .pipe(dest(DIST_PATH))
+    .pipe(dest('dist'))
     .pipe(reload({ stream: true }));
 });
 
@@ -82,24 +84,28 @@ task("scripts", () => {
     )
     .pipe(gulpif(env === "prod", uglify()))
     .pipe(gulpif(env === "dev", sourcemaps.write()))
-    .pipe(dest(DIST_PATH))
+    .pipe(dest("dist"))
     .pipe(reload({ stream: true }));
 });
 
 
 task("icons", () => {
-  return src("/icons/*.svg")
-    .pipe(
-      svgo({
-        plugins: [
-          {
-            removeAttrs: {
-              attrs: "(fill|stroke|style|width|height|data.*)"
-            }
-          }
-        ]
-      })
-    )
+  return src("icons/*.svg")
+    .pipe(svgmin({
+        js2svg: {
+          pretty: true
+        }
+      }))
+    .pipe(cheerio({
+      run: function ($) {
+				$('[fill]').removeAttr('fill');
+				$('[stroke]').removeAttr('stroke');
+				$('[style]').removeAttr('style');
+			},
+      parserOptions: {xmlMode: true}
+    }))
+  
+    .pipe(replace('&gt;', '>'))    
     .pipe(
       svgSprite({
         mode: {
@@ -109,7 +115,8 @@ task("icons", () => {
         }
       })
     )
-    .pipe(dest("dist/icons"));
+    .pipe(dest("dist/images/icons"))
+    .pipe(reload({ stream: true }));
 });
 
 task("browser-sync", () => {

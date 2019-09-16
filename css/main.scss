@@ -2,6 +2,7 @@ $orange: #e45028;
 $yellow: #f9b43b;
 $black: #2f3234;
 $red: #e35028;
+$white: #fff;
 
 $z-fixed-menu: 100;
 
@@ -11,7 +12,7 @@ $laptop: 992px;
 $desktop: 1200px;
 
 //normalize
-@import "_misc/normalize.scss";
+// @import "_misc/normalize.scss";
 
 @import "_misc/media.scss";
 
