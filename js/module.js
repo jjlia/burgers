@@ -30,45 +30,21 @@ for (let i = 0; i < accoItemLength; i++) {
 //////////////меню слайдер////////
     const right = document.querySelector('.burger__controls-link--next');
     const left = document.querySelector('.burger__controls-link--prev');
-    const list = document.querySelector('.burger__list');
-    let items = document.querySelectorAll('.burger__item');
+    const item1 = document.querySelectorAll('#items');
 
-    let container = document.querySelector('.burger');
-    let widthWrapper = container.clientWidth;
-    
-    let wrapper = document.querySelector('.burger__wrapper');
-	wrapper.style.width = widthWrapper  + 'px';
-
-
-    const minRight = 0;
-    const maxRight = widthWrapper * (items.length - 1);
-    const step = widthWrapper;
-    let currentRight = 0;
-
-    list.style.right = currentRight + 'px';
-    right.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        if (currentRight < maxRight) {
-            currentRight += step;
-            list.style.right = currentRight + 'px';
-        } else {
-            currentRight = minRight;
-            list.style.right = currentRight + 'px';
-        }
+    right.addEventListener("click", function () {
+        loop("right");
     });
-
-    left.addEventListener("click", function(e) {
-        e.preventDefault();
-
-            if (currentRight > minRight) {
-                currentRight -= step;
-                list.style.right = currentRight + "px";
-            } else {
-                currentRight = maxRight;
-                list.style.right = currentRight + "px";
-            }
-        });
+    left.addEventListener("click", function () {
+        loop("left");
+    });
+    function loop(direction) {
+        if (direction === "right") {
+            items.appendChild(items.firstElementChild);
+        } else {
+            items.insertBefore(items.lastElementChild, items.firstElementChild);
+        }
+    }
 /////////////////////////////////////
 
 const reviews = document.querySelector('.reviews__list');
