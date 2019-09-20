@@ -84,25 +84,28 @@ reviews.addEventListener('click', function(e) {
     });
 });
 //////////
-const element = document.querySelector('.team-accordeon__list');
-const item = document.querySelectorAll('.team-accordeon__item');
-const title = document.querySelector('.team-accordeon__trigger');
-const content = document.querySelector('.team-accordeon__content');
-
-
-element.addEventListener("click", function(e) {
-    e.preventDefault();
-    let itemActive = document.querySelector('.active');
-    console.log(itemActive);
-    if (e.target.classList.contains("team-accordeon__trigger")) {
-    if (itemActive) {
-        itemActive.classList.remove('active');
-    }
-    
-    itemActive = e.target.parentNode;
-    itemActive.classList.add("active");
+const team = document.querySelector('.team'),
+    teamMember = document.querySelectorAll('.team-accordeon__item'),
+    teamMemberLength = teamMember.length;
+team.addEventListener('click', function (e) {
+    for (let i = 0; i < teamMemberLength; i++) {
+        team[i].classList.remove('active');
     }
 });
+for (let i = 0; i < teamMemberLength; i++) {
+    teamMember[i].addEventListener('click', function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        if (teamMember[i].classList.contains('active')) {
+            teamMember[i].classList.remove('active');
+        } else {
+            for (let i = 0; i < teamMemberLength; i++) {
+                teamMember[i].classList.remove('active');
+            }
+            teamMember[i].classList.add('active');
+        }
+    });
+}
 
 /////////////////////////////////////////
 let hamburger = options => {
