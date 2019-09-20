@@ -447,4 +447,53 @@ if (isMobile) {
     }
   });
 }
-//////////
+//////////карта
+ymaps.ready(init);
+
+var placemarks = [
+		{
+			latitude: 59.97,
+			longitude: 30.31,
+			hintContent: "ул. Литераторов, д. 19",
+			balloonContent: "ул. Литераторов, д. 19"
+		},
+		{
+			latitude: 59.94,
+			longitude: 30.25,
+			hintContent: "Малый проспект ВО, д 64",
+			balloonContent: "Малый проспект ВО, д 64"
+		},
+		{
+			latitude: 59.93,
+			longitude: 30.34,
+			hintContent: "наб. реки Фонтанки, д. 56",
+			balloonContent: "наб. реки Фонтанки, д. 56"
+		}
+	];
+
+function init() {
+	var mapYandex = new ymaps.Map("map", {
+		center: [59.94, 30.32],
+		zoom: 12
+	});
+
+	placemarks.forEach(function (obj) {
+		let placemark = new ymaps.Placemark(
+			[obj.latitude, obj.longitude],
+			{
+				hintContent: obj.hintContent,
+				balloonContent: obj.balloonContent
+			},
+			{
+				iconLayout: "default#image",
+				iconImageHref: "icons/map-marker.svg",
+				iconImageSize: [46, 57],
+				iconImageOffset: [-15, -50]
+			}
+		);
+
+		mapYandex.geoObjects.add(placemark);
+	});
+
+	mapYandex.behaviors.disable("scrollZoom");
+}
