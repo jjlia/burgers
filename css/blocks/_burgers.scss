@@ -42,11 +42,11 @@
 	position: absolute;
 	transform-origin: 0 0;
 	cursor: pointer;
-	width: 1.81rem;
-    height: .94rem;
+	width: rem(29px);
+    height: rem(14px);
 }
 
-.burger__controls-link--next {
+.burger__controls-link--right {
 	// fill: #fff;
     // stroke: #fff;
     // display: block;
@@ -60,7 +60,7 @@
     cursor: pointer;
 }
 
-.burger__controls-link--prev {
+.burger__controls-link--left {
 	// fill: #fff;
 	// stroke: #fff;
 	// display: block;

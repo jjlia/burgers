@@ -13,7 +13,7 @@
   .fixed-menu__item {
     margin-bottom: rem(5px);
     
-    &--active {
+    &.active {
       .fixed-menu__dot {
           &:before {
             width: rem(14px);

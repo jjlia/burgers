@@ -1,10 +1,9 @@
 .best {
     background: url('../img/fons/bg.png') center center /cover no-repeat;
-
-    @include phones {
-      background: url('../img/fons/best-phones.png') center center no-repeat;
-      height: 100%;
-    }
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
 }
 .best__list {
     display: flex;
@@ -15,9 +14,11 @@
   }
   
   .best__item {
-    flex: 1;
-    margin-right: rem(35px);
+    padding: 0 rem(15px);
+    margin-bottom: rem(50px);
     text-align: center;
+    display: flex;
+    flex-direction: column;
   
     &:last-child {
       margin-right: 0;
@@ -26,10 +27,9 @@
     @include phones {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
-      margin-bottom: rem(10px);
-      margin-right: 0;
+      width: 100%;
+      margin-bottom: rem(25px);
+      
     }
   }
   
@@ -53,8 +53,10 @@
     @include ubuntu;
     font-size: rem(14px);
     font-weight: 300;
-    line-height: 24.09px;
+    line-height: rem(24px);
     @include phones {
       width: 70%;
+      display: block;
+      text-align: left;
     }
   }
