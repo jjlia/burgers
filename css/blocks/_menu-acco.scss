@@ -28,17 +28,24 @@
     height: 100%;
     display: flex;
 
-    &--active {
+    &.active {
         .menu-acco__trigger-text {
             color: $yellow; 
-            }
         }
+        .menu-acco__content {
+            width: 540px;
+        }
+        .menu-acco__text {
+            display: block;
+        }
+        
+    }
 }
 
 .menu-acco__item-meats {
     background-image: url('../img/pic/meats1.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     
 }
 
@@ -95,3 +102,4 @@
     display: none;
     padding: 60px 30px;
 }
+

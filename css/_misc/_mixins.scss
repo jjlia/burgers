@@ -1,0 +1,16 @@
+@mixin center-abs ($position: both) {
+	position: absolute;
+	@if ($position == vertical) {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@if ($position == horizontal) {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@if ($position == both) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

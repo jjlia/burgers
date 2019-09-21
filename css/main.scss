@@ -2,6 +2,7 @@ $orange: #e45028;
 $yellow: #f9b43b;
 $black: #2f3234;
 $red: #e35028;
+$white: #fff;
 
 $z-fixed-menu: 100;
 
@@ -11,7 +12,7 @@ $laptop: 992px;
 $desktop: 1200px;
 
 //normalize
-@import "_misc/normalize.scss";
+// @import "_misc/normalize.scss";
 
 @import "_misc/media.scss";
 
@@ -21,21 +22,25 @@ $desktop: 1200px;
 @import "_misc/layout.scss";
 
 
-@import "blocks/_section.scss";
-@import "blocks/_hero";
-@import "blocks/header.scss";
-@import "blocks/hamburger-menu-link.scss";
-@import "blocks/menu.scss";
-@import "blocks/_btn.scss";
-@import "blocks/title.scss";
-@import "blocks/scroll-down-btn.scss";
-@import "blocks/best.scss";
-@import "blocks/_team.scss";
-@import "blocks/menu-acco.scss";
-@import "blocks/reviews.scss";
-@import "blocks/_order.scss";
-@import "blocks/form";
-@import "blocks/_map";
-@import "blocks/footer.scss";
-@import "blocks/socials.scss";
-@import "blocks/_fixed-menu.scss";
+@import "blocks/*.scss";
+// @import "blocks/_hero";
+// @import "blocks/header.scss";
+// @import "blocks/hamburger-menu-link";
+// @import "blocks/menu.scss";
+// @import "blocks/_btn.scss";
+// @import "blocks/title.scss";
+// @import "blocks/scroll-down-btn.scss";
+// @import "blocks/best.scss";
+// @import "blocks/_burgers.scss";
+// @import "blocks/dropdown.scss";
+// @import "blocks/_team";
+// @import "blocks/menu-acco.scss";
+// @import "blocks/reviews.scss";
+// @import "blocks/_popup.scss";
+// @import "blocks/_order.scss";
+// @import "blocks/form";
+// @import "blocks/_map";
+// @import "blocks/footer.scss";
+// @import "blocks/socials.scss";
+// @import "blocks/_mobile-menu.scss";
+// @import "blocks/_fixed-menu.scss";
