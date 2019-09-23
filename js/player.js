@@ -1,108 +1,125 @@
-let player;
-const formatTime = timeSec => {
-    const roundTime = Math.round(timeSec);
+const video = document.querySelector('#video');
+const videoBtn = document.querySelector('#playBtn');
+const progress = document.querySelector('#progress');
+const progressTime = document.querySelector('#progressTime');
+const allTime = document.querySelector('#allTime');
+const videoVolume = document.querySelector('#volume');
+const workPlay = document.querySelector('.video__play');
+const svgButton = document.querySelector('.play-button');
+const bigButton = document.querySelector('.video__play');
+const volumeX = document.querySelector('.work__volume-x');
 
-    const minutes = Math.floor(roundTime / 60);
-    const seconds = roundTime - minutes * 60;
 
-    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+video.ontimeupdate = progressUpdate;
+video.volume = 10 / 100;
 
-    return `${minutes}:${formattedSeconds}`;
-};
 
-const onPlayerReady = () => {
-    let interval;
-    let durationSec = player.getDuration();
-    
-    // console.log(duration);
-  
-    $(".player__duration-estimate").text(formatTime(durationSec));
-  
-    if (typeof interval !== "undefined") {
-      clearInterval(interval);
+volume.addEventListener('input', function() {
+    let v = this.value;
+    video.volume = v / 100;
+
+    console.log(videoVolume.value);
+
+    if (videoVolume.value == 0) {
+        volumeX.style.display = 'block';
+    } else {
+        volumeX.style.display = 'none';
     }
-  
-    interval = setInterval(() => {
-      const completedSec = player.getCurrentTime();
-      const completedPercent = (completedSec / durationSec) * 100;
-  
-      $(".player__playback-button").css({
-        left: `${completedPercent}%`
-      });
-  
-      $(".player__duration-completed").text(formatTime(completedSec));
-    }, 1000);
-  };
-  
-  const eventsInit = () => {
-    $(".player__start").on("click", e => {
-      e.preventDefault();
-      const btn = $(e.currentTarget);
-  
-      if (btn.hasClass("paused")) {
-        player.pauseVideo();
-      } else {
-        player.playVideo();
-      }
-    });
-  
-    $(".player__playback").on("click", e => {
-      const bar = $(e.currentTarget);
-      const newButtonPosition = e.pageX - bar.offset().left;
-      const buttonPosPercent = (newButtonPosition / bar.width()) * 100;
-      const newPlayerTimeSec = (player.getDuration() / 100) * buttonPosPercent;
-  
-      $(".player__playback-button").css({
-        left: `${buttonPosPercent}%`
-      });
-  
-      player.seekTo(newPlayerTimeSec);
-    });
-  
-    $(".player__splash").on("click", e => {
-      player.playVideo();
-    });
-  };
-  
-  const onPlayerStateChange = event => {
-    const playerButton = $(".player__start");
-    /*
-    -1 (воспроизведение видео не начато)
-    0 (воспроизведение видео завершено)
-    1 (воспроизведение)
-    2 (пауза)
-    3 (буферизация)
-    5 (видео подают реплики).
-     */
-    switch (event.data) {
-      case 1: 
-        $('.player__wrapper').addClass('active');
-        playerButton.addClass("paused");
-        break;
-      case 2: 
-        playerButton.removeClass("paused");
-        break;
+});
+
+bigButton.addEventListener('click', e => {
+    bigButton.style.display = 'none';
+    video.play();
+    videoBtn.classList.add('play-button--pause');
+    svgButton.style.display = 'none';
+});
+
+videoBtn.addEventListener('click', e => {
+    if (video.paused) {
+        video.play();
+        bigButton.style.display = 'none';
+    } else {
+        video.pause();
+        //video.currentTime = 0; //сбросить время
+        //video.playbackRate = 2; //в два раза быстрее проигрывается
+        //video.volume = this.value / 100; //регулировка громкости
     }
-  };
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('yt-player', {
-        // height: '370',
-        // width: '660',
-        videoId: 'PRVKi79cOHo',
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        },
-        playerVars: {
-            controls: 0,
-            disablekb: 0,
-            showinfo: 0,
-            rel: 0,
-            autoplay: 0,
-            modestbranding: 0
-        }
-        });
+    if (video.paused) {
+        videoBtn.classList.remove('play-button--pause');
+        svgButton.style.display = 'block';
+    } else {
+        svgButton.style.display = 'none';
+        videoBtn.classList.add('play-button--pause');
+        bigButton.style.display = 'none';
     }
-    
-    eventsInit();
+});
+
+video.addEventListener('click', e => {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+    if (video.paused) {
+        videoBtn.classList.remove('play-button--pause');
+        svgButton.style.display = 'block';
+    } else {
+        svgButton.style.display = 'none';
+        videoBtn.classList.add('play-button--pause');
+        bigButton.style.display = 'none';
+    }
+});
+
+progress.addEventListener('click', function() {
+    let widthProgress = this.offsetWidth;
+    let targetClick = event.offsetX;
+
+    this.value = (100 * targetClick) / widthProgress;
+    video.pause();
+    video.currentTime = video.duration * (targetClick / widthProgress);
+    video.play();
+});
+
+
+progress.addEventListener('mousedown', function() {
+    let widthProgress = this.offsetWidth;
+    let targetClick = event.offsetX;
+
+    this.value = (100 * targetClick) / widthProgress;
+    video.pause();
+
+});
+
+progress.addEventListener('mouseup', function() {
+    let widthProgress = this.offsetWidth;
+    let targetClick = event.offsetX;
+
+    this.value = (100 * targetClick) / widthProgress;
+    video.currentTime = video.duration * (targetClick / widthProgress);
+    video.play();
+    svgButton.style.display = 'none';
+    videoBtn.classList.add('play-button--pause');
+    bigButton.style.display = 'none';
+});
+
+
+function progressUpdate() {
+    let d = video.duration; //полное время
+    let c = video.currentTime; //прогресс времени
+
+    progress.value = (100 * c) / d;
+    progressTime.textContent = '00:' + Math.floor(c);
+
+    if (video.currentTime < 10) {
+        progressTime.textContent = '00:0' + Math.floor(c);
+    }
+    // allTime.textContent = '00:' + Math.floor(d);
+    if (progress.value == 100) {
+        progress.value = 0;
+        video.currentTime = 0;
+        videoBtn.classList.remove('play-button--pause');
+        svgButton.style.display = 'block';
+        video.pause();
+    }
+}
         
