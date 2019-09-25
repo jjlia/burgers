@@ -14,11 +14,6 @@
     }
 }
 
-.player__wrapper {
-  width: 100%;
-  font-size: 0;
-}
-
 .player {
   display: flex;
   flex-direction: column;
@@ -27,7 +22,7 @@
   width: 85%;
 }
 
-.player__start {
+.duration {
   width: rem(50px);
   height: rem(50px);
   display: flex;
@@ -36,10 +31,12 @@
   color: #626262;
   @include ubuntu;
   overflow: hidden;
+  width: 75%;
+  
 }
 
 .player__controls {
-  width: 100%;
+  width: 85%;
   height: rem(50px);
   background-color: #3e3e3e;
   display: flex;
@@ -54,35 +51,39 @@
   font-size: .8rem;
 }
 
-.player__playback {
-  width: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#progress::-webkit-progress-bar {
+#durationLevel::-webkit-duration#durationLevel-bar {
   cursor: pointer;
   border-radius: rem(10px);
   height: rem(5px);
   margin: auto;
 }
 
-#progress {
+#durationLevel {
   height: rem(4px);
   width: 90%;
   border-radius: rem(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#progress::-webkit-progress-value {
+#durationLevel::-webkit-duration#durationLevel-value {
   -webkit-appearance: none;
   cursor: pointer;
   background-color: #626262;
   border-radius: rem(5px);
 }
 
-video {
+#video {
   cursor: pointer;
+  width: 100%;
+  max-height: 100%;
+}
+
+.sound {
+  display: flex;
+  width: 20%;
+  align-items: center;
 }
 
 .playback__way {
@@ -103,17 +104,21 @@ video {
   cursor: pointer;
 }
 
-.player__volume {
-  padding: 0 3%;
+.sound__volume {
+  // padding: 0 3%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.work__volume {
+.sound__img {
   fill: #626262;
   height: 3rem;
   width: 3rem;
+  padding: 0 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video__play {
@@ -125,6 +130,9 @@ video {
   top: 50%;
   transform: translate(-50%, -50%);
   transition: display 1s;
+  &--active {
+    display: none;
+  }
 }
 
 .play-button {
@@ -134,11 +142,16 @@ video {
   cursor: pointer;
 }
 
-.play-button--pause {
+
+#pauseBtn {
   cursor: pointer;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  fill: #626262;
   &:after {
       content: '';
       display: inline-block;
